@@ -54,7 +54,7 @@ export default function Aluno() {
     <Container>
       <Loading isLoading={isLoading} />
       <h1>Alunos</h1>
-      <NovoAluno to="/aluno/">Novo aluno</NovoAluno>
+      <NovoAluno to='/aluno/'>Novo aluno</NovoAluno>
       <AlunoContainer>
         {alunos.map((aluno, index) => (
           <div key={String(aluno.id)}>
@@ -64,13 +64,13 @@ export default function Aluno() {
             <span>{aluno.nome}</span>
             <span>{aluno.email}</span>
 
-            <Link to={`/aluno/${aluno.id}/edit`}>
+            <Link title='Editar' to={`/aluno/${aluno.id}/edit`}>
               <FaEdit size={16} />
             </Link>
-            <Link onClick={handleDeleteAsk} to={`/aluno/${aluno.id}/delete`}>
+            <Link title='Apagar' onClick={handleDeleteAsk} to={`/aluno/${aluno.id}/delete`}>
               <FaWindowClose size={16} />
             </Link>
-            <FaExclamation
+            <FaExclamation title='Apagar'
               size={16}
               display='none'
               cursor='pointer'

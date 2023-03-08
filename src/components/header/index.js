@@ -20,23 +20,23 @@ export default function Header() {
   };
   return (
     <Nav>
-      <Link to='/'>
-        <FaHome size={24} />
+      <Link title='Pagina Inicial' to='/'>
+        <FaHome size={30} />
       </Link>
-      <Link to='/register'>
+      <Link title='Criar Usuário' to='/register'>
         <FaUserAlt size={24} />
       </Link>
 
       {isLoggedIn ? (
-        <Link to='/login' onClick={handleLogout}>
+        <Link title='Fazer Logout' to='/login' onClick={handleLogout}>
           <FaPowerOff size={24} />
         </Link>
       ) : (
-        <Link to='/login'>
+        <Link title='Fazer Login' to='/login'>
           <FaSignInAlt size={24} />
         </Link>
       )}
-      {isLoggedIn && <FaCircle size={12} color='#c4f7a1' />}
+      {isLoggedIn && <FaCircle title='Usuário esta Logado' size={12} color='#c4f7a1' />}
     </Nav>
   );
 }

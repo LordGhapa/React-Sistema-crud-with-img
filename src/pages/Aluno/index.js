@@ -144,7 +144,7 @@ export default function Alunos({ match }) {
       {(id && (
         <ProfilePicture>
           <img crossOrigin='' src={foto} alt='images da foto' />
-          <Link to={`/fotos/${id}`}>
+          <Link title='Editar Foto do Aluno' to={`/fotos/${id}`}>
             <FaEdit size={24} />
           </Link>
         </ProfilePicture>
