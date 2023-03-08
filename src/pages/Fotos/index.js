@@ -37,6 +37,10 @@ export default function Fotos({ match }) {
   }, [id]);
   const handleChange = async (e) => {
     const newFoto = e.target.files[0];
+    if (!newFoto.type.startsWith('image/')) {
+      toast.error('Selecione uma imagem válida');
+      return;
+    }
     const fotoUrl = URL.createObjectURL(newFoto);
     setFoto(fotoUrl);
     const formData = new FormData();
@@ -66,7 +70,7 @@ export default function Fotos({ match }) {
       <Form>
         <label htmlFor='foto'>
           {foto ? <img crossOrigin='' src={foto} alt='foto' /> : 'Selecionar'}
-          <input type='file' id='foto' onChange={handleChange} />
+          <input type='file' accept='image/*' id='foto' onChange={handleChange} />
         </label>
       </Form>
     </Container>
