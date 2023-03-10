@@ -64,13 +64,13 @@ export default function Alunos({ match }) {
     setSobrenome(sobrenome.trim());
 
     let formErros = false;
-    if (nome.length < 3 || nome.length >= 255) {
+    if (nome.length < 3 || nome.length >= 50) {
       formErros = true;
-      toast.error('Nome deve ter entre 3 e 255 caracteres');
+      toast.error('Nome deve ter entre 3 e 50 caracteres');
     }
-    if (sobrenome.length < 3 || sobrenome.length > 255) {
+    if (sobrenome.length < 3 || sobrenome.length > 50) {
       formErros = true;
-      toast.error('Sobrenome precisa ter entre 3 e 255 caracteres');
+      toast.error('Sobrenome precisa ter entre 3 e 50 caracteres');
     }
 
     if (!isEmail(email)) {
@@ -124,8 +124,6 @@ export default function Alunos({ match }) {
       setIsLoading(false);
       console.log(err);
       const errors = err?.response?.data?.errors ?? ['Erro inesperado'];
-
-      const data = err?.response?.data ?? {};
       const status = err?.response?.status ?? 0;
 
       if (errors.length > 0) {
