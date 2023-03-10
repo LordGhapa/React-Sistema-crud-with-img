@@ -9,6 +9,12 @@ export const AlunoContainer = styled.div`
     align-items: center;
     padding: 5px 0;
   }
+  span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 150px;
+  }
 
   div + div {
     border-top: 1px solid black;
