@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 This project was with [Create React App](https://github.com/facebook/create-react-app).\
-works only on localhost 3000 http and will only work while my api is available
+will only work while my api is available
 
 ## Available Scripts
 
